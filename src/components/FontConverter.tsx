@@ -2393,9 +2393,25 @@ export default function FontConverter() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-          <h1 className="text-lg font-semibold text-gray-900 dark:text-white">
-            X4 EPDFont Converter
-          </h1>
+          <div className="flex items-center gap-3">
+            <img src="/logo.svg" alt="CrossPoint Reader" className="w-8 h-8" />
+            <div>
+              <h1 className="text-lg font-semibold text-gray-900 dark:text-white">
+                X4 EPDFont Converter
+              </h1>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                Font converter for{" "}
+                <a
+                  href="https://github.com/aspect-apps/crosspoint-reader"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
+                >
+                  CrossPoint Reader
+                </a>
+              </p>
+            </div>
+          </div>
           <a
             href="https://github.com/eunchurn/x4-epdfont-converter"
             target="_blank"
