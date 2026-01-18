@@ -123,6 +123,33 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
     charCount: 256,
   },
   {
+    id: "arabicSupplement",
+    name: "Arabic Supplement",
+    description: "Additional Arabic characters (0x0750-0x077F)",
+    intervals: [{ start: 0x0750, end: 0x077f }],
+    category: "Middle Eastern",
+    defaultEnabled: false,
+    charCount: 48,
+  },
+  {
+    id: "arabicPresentationFormsA",
+    name: "Arabic Presentation Forms-A",
+    description: "Arabic ligatures and contextual forms (0xFB50-0xFDFF)",
+    intervals: [{ start: 0xfb50, end: 0xfdff }],
+    category: "Middle Eastern",
+    defaultEnabled: false,
+    charCount: 688,
+  },
+  {
+    id: "arabicPresentationFormsB",
+    name: "Arabic Presentation Forms-B",
+    description: "Arabic presentation forms (0xFE70-0xFEFF)",
+    intervals: [{ start: 0xfe70, end: 0xfeff }],
+    category: "Middle Eastern",
+    defaultEnabled: false,
+    charCount: 144,
+  },
+  {
     id: "hebrew",
     name: "Hebrew",
     description: "Hebrew alphabet (0x0590-0x05FF)",
@@ -403,7 +430,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkExtensionB",
     name: "CJK Extension B",
-    description: "한중일 통합 한자 확장 B (U+20000-U+2A6DF) - Very Large!",
+    description: "CJK Unified Ideographs Extension B (U+20000-U+2A6DF) - Very Large!",
     intervals: [{ start: 0x20000, end: 0x2a6df }],
     category: "CJK Extensions (SIP)",
     defaultEnabled: false,
@@ -412,7 +439,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkExtensionC",
     name: "CJK Extension C",
-    description: "한중일 통합 한자 확장 C (U+2A700-U+2B73F)",
+    description: "CJK Unified Ideographs Extension C (U+2A700-U+2B73F)",
     intervals: [{ start: 0x2a700, end: 0x2b73f }],
     category: "CJK Extensions (SIP)",
     defaultEnabled: false,
@@ -421,7 +448,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkExtensionD",
     name: "CJK Extension D",
-    description: "한중일 통합 한자 확장 D (U+2B740-U+2B81F)",
+    description: "CJK Unified Ideographs Extension D (U+2B740-U+2B81F)",
     intervals: [{ start: 0x2b740, end: 0x2b81f }],
     category: "CJK Extensions (SIP)",
     defaultEnabled: false,
@@ -430,7 +457,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkExtensionE",
     name: "CJK Extension E",
-    description: "한중일 통합 한자 확장 E (U+2B820-U+2CEAF)",
+    description: "CJK Unified Ideographs Extension E (U+2B820-U+2CEAF)",
     intervals: [{ start: 0x2b820, end: 0x2ceaf }],
     category: "CJK Extensions (SIP)",
     defaultEnabled: false,
@@ -439,7 +466,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkExtensionF",
     name: "CJK Extension F",
-    description: "한중일 통합 한자 확장 F (U+2CEB0-U+2EBEF)",
+    description: "CJK Unified Ideographs Extension F (U+2CEB0-U+2EBEF)",
     intervals: [{ start: 0x2ceb0, end: 0x2ebef }],
     category: "CJK Extensions (SIP)",
     defaultEnabled: false,
@@ -448,7 +475,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkCompatIdeographsSupplement",
     name: "CJK Compat. Ideographs Supplement",
-    description: "한중일 호환용 한자 보충 (U+2F800-U+2FA1F)",
+    description: "CJK Compatibility Ideographs Supplement (U+2F800-U+2FA1F)",
     intervals: [{ start: 0x2f800, end: 0x2fa1f }],
     category: "CJK Extensions (SIP)",
     defaultEnabled: false,
@@ -457,7 +484,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkExtensionG",
     name: "CJK Extension G",
-    description: "한중일 통합 한자 확장 G (U+30000-U+3134F)",
+    description: "CJK Unified Ideographs Extension G (U+30000-U+3134F)",
     intervals: [{ start: 0x30000, end: 0x3134f }],
     category: "CJK Extensions (SIP)",
     defaultEnabled: false,
@@ -466,7 +493,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkExtensionH",
     name: "CJK Extension H",
-    description: "한중일 통합 한자 확장 H (U+31350-U+323AF)",
+    description: "CJK Unified Ideographs Extension H (U+31350-U+323AF)",
     intervals: [{ start: 0x31350, end: 0x323af }],
     category: "CJK Extensions (SIP)",
     defaultEnabled: false,
@@ -477,7 +504,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "superscriptsSubscripts",
     name: "Superscripts & Subscripts",
-    description: "위첨자, 아래첨자 (0x2070-0x209F)",
+    description: "Superscripts and Subscripts (0x2070-0x209F)",
     intervals: [{ start: 0x2070, end: 0x209f }],
     category: "Publishing & Documents",
     defaultEnabled: false,
@@ -486,7 +513,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "enclosedAlphanumerics",
     name: "Enclosed Alphanumerics",
-    description: "원문자, 괄호문자 ①②③ (0x2460-0x24FF)",
+    description: "Enclosed Alphanumerics ①②③ (0x2460-0x24FF)",
     intervals: [{ start: 0x2460, end: 0x24ff }],
     category: "Publishing & Documents",
     defaultEnabled: false,
@@ -495,7 +522,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "enclosedCjkLetters",
     name: "Enclosed CJK Letters",
-    description: "원문자 한글/한자 ㉠㉡㉢ (0x3200-0x32FF)",
+    description: "Enclosed CJK Letters ㉠㉡㉢ (0x3200-0x32FF)",
     intervals: [{ start: 0x3200, end: 0x32ff }],
     category: "Publishing & Documents",
     defaultEnabled: false,
@@ -504,7 +531,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cjkCompatibility",
     name: "CJK Compatibility",
-    description: "CJK 호환 문자 ㍿㎜㎝ (0x3300-0x33FF)",
+    description: "CJK Compatibility ㍿㎜㎝ (0x3300-0x33FF)",
     intervals: [{ start: 0x3300, end: 0x33ff }],
     category: "Publishing & Documents",
     defaultEnabled: false,
@@ -513,7 +540,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "enclosedIdeographicSupplement",
     name: "Enclosed Ideographic Supplement",
-    description: "원문자 보충 🈚🈯 (U+1F200-U+1F2FF)",
+    description: "Enclosed Ideographic Supplement 🈚🈯 (U+1F200-U+1F2FF)",
     intervals: [{ start: 0x1f200, end: 0x1f2ff }],
     category: "Publishing & Documents",
     defaultEnabled: false,
@@ -522,7 +549,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "smallFormVariants",
     name: "Small Form Variants",
-    description: "작은 형태 변형 (0xFE50-0xFE6F)",
+    description: "Small Form Variants (0xFE50-0xFE6F)",
     intervals: [{ start: 0xfe50, end: 0xfe6f }],
     category: "Publishing & Documents",
     defaultEnabled: false,
@@ -531,7 +558,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "verticalForms",
     name: "Vertical Forms",
-    description: "세로쓰기용 기호 (0xFE10-0xFE1F)",
+    description: "Vertical Forms (0xFE10-0xFE1F)",
     intervals: [{ start: 0xfe10, end: 0xfe1f }],
     category: "Publishing & Documents",
     defaultEnabled: false,
@@ -540,7 +567,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "ideographicSymbols",
     name: "Ideographic Symbols & Punctuation",
-    description: "표의 문자 기호 (U+16FE0-U+16FFF)",
+    description: "Ideographic Symbols (U+16FE0-U+16FFF)",
     intervals: [{ start: 0x16fe0, end: 0x16fff }],
     category: "Publishing & Documents",
     defaultEnabled: false,
@@ -551,7 +578,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "latinExtendedAdditional",
     name: "Latin Extended Additional",
-    description: "라틴 확장 추가 - 베트남어 등 (0x1E00-0x1EFF)",
+    description: "Latin Extended Additional - Vietnamese etc. (0x1E00-0x1EFF)",
     intervals: [{ start: 0x1e00, end: 0x1eff }],
     category: "Additional Scripts",
     defaultEnabled: false,
@@ -560,7 +587,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "latinExtendedC",
     name: "Latin Extended-C",
-    description: "라틴 확장 C (0x2C60-0x2C7F)",
+    description: "Latin Extended C (0x2C60-0x2C7F)",
     intervals: [{ start: 0x2c60, end: 0x2c7f }],
     category: "Additional Scripts",
     defaultEnabled: false,
@@ -569,7 +596,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "latinExtendedD",
     name: "Latin Extended-D",
-    description: "라틴 확장 D (0xA720-0xA7FF)",
+    description: "Latin Extended D (0xA720-0xA7FF)",
     intervals: [{ start: 0xa720, end: 0xa7ff }],
     category: "Additional Scripts",
     defaultEnabled: false,
@@ -578,7 +605,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "latinExtendedE",
     name: "Latin Extended-E",
-    description: "라틴 확장 E (0xAB30-0xAB6F)",
+    description: "Latin Extended E (0xAB30-0xAB6F)",
     intervals: [{ start: 0xab30, end: 0xab6f }],
     category: "Additional Scripts",
     defaultEnabled: false,
@@ -587,7 +614,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "greekExtended",
     name: "Greek Extended",
-    description: "그리스어 확장 (0x1F00-0x1FFF)",
+    description: "Greek Extended (0x1F00-0x1FFF)",
     intervals: [{ start: 0x1f00, end: 0x1fff }],
     category: "Additional Scripts",
     defaultEnabled: false,
@@ -596,7 +623,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cyrillicExtendedA",
     name: "Cyrillic Extended-A",
-    description: "키릴 확장 A (0x2DE0-0x2DFF)",
+    description: "Cyrillic Extended A (0x2DE0-0x2DFF)",
     intervals: [{ start: 0x2de0, end: 0x2dff }],
     category: "Additional Scripts",
     defaultEnabled: false,
@@ -605,7 +632,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cyrillicExtendedB",
     name: "Cyrillic Extended-B",
-    description: "키릴 확장 B (0xA640-0xA69F)",
+    description: "Cyrillic Extended B (0xA640-0xA69F)",
     intervals: [{ start: 0xa640, end: 0xa69f }],
     category: "Additional Scripts",
     defaultEnabled: false,
@@ -614,18 +641,538 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "cyrillicExtendedC",
     name: "Cyrillic Extended-C",
-    description: "키릴 확장 C (0x1C80-0x1C8F)",
+    description: "Cyrillic Extended C (0x1C80-0x1C8F)",
     intervals: [{ start: 0x1c80, end: 0x1c8f }],
     category: "Additional Scripts",
     defaultEnabled: false,
     charCount: 16,
   },
 
+  // ===== World Scripts =====
+  // South Asian Scripts
+  {
+    id: "devanagari",
+    name: "Devanagari",
+    description: "Hindi, Sanskrit, Marathi, Nepali (0x0900-0x097F)",
+    intervals: [{ start: 0x0900, end: 0x097f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "devanagariExtended",
+    name: "Devanagari Extended",
+    description: "Devanagari Extended (0xA8E0-0xA8FF)",
+    intervals: [{ start: 0xa8e0, end: 0xa8ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "bengali",
+    name: "Bengali",
+    description: "Bengali, Assamese (0x0980-0x09FF)",
+    intervals: [{ start: 0x0980, end: 0x09ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "gurmukhi",
+    name: "Gurmukhi",
+    description: "Punjabi (0x0A00-0x0A7F)",
+    intervals: [{ start: 0x0a00, end: 0x0a7f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "gujarati",
+    name: "Gujarati",
+    description: "Gujarati (0x0A80-0x0AFF)",
+    intervals: [{ start: 0x0a80, end: 0x0aff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "oriya",
+    name: "Oriya",
+    description: "Odia (0x0B00-0x0B7F)",
+    intervals: [{ start: 0x0b00, end: 0x0b7f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "tamil",
+    name: "Tamil",
+    description: "Tamil (0x0B80-0x0BFF)",
+    intervals: [{ start: 0x0b80, end: 0x0bff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "telugu",
+    name: "Telugu",
+    description: "Telugu (0x0C00-0x0C7F)",
+    intervals: [{ start: 0x0c00, end: 0x0c7f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "kannada",
+    name: "Kannada",
+    description: "Kannada (0x0C80-0x0CFF)",
+    intervals: [{ start: 0x0c80, end: 0x0cff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "malayalam",
+    name: "Malayalam",
+    description: "Malayalam (0x0D00-0x0D7F)",
+    intervals: [{ start: 0x0d00, end: 0x0d7f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "sinhala",
+    name: "Sinhala",
+    description: "Sinhala (0x0D80-0x0DFF)",
+    intervals: [{ start: 0x0d80, end: 0x0dff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  // Southeast Asian Scripts
+  {
+    id: "lao",
+    name: "Lao",
+    description: "Lao (0x0E80-0x0EFF)",
+    intervals: [{ start: 0x0e80, end: 0x0eff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "tibetan",
+    name: "Tibetan",
+    description: "Tibetan (0x0F00-0x0FFF)",
+    intervals: [{ start: 0x0f00, end: 0x0fff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 256,
+  },
+  {
+    id: "myanmar",
+    name: "Myanmar",
+    description: "Burmese (0x1000-0x109F)",
+    intervals: [{ start: 0x1000, end: 0x109f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 160,
+  },
+  {
+    id: "myanmarExtendedA",
+    name: "Myanmar Extended-A",
+    description: "Myanmar Extended A (0xAA60-0xAA7F)",
+    intervals: [{ start: 0xaa60, end: 0xaa7f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "myanmarExtendedB",
+    name: "Myanmar Extended-B",
+    description: "Myanmar Extended B (0xA9E0-0xA9FF)",
+    intervals: [{ start: 0xa9e0, end: 0xa9ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "khmer",
+    name: "Khmer",
+    description: "Cambodian (0x1780-0x17FF)",
+    intervals: [{ start: 0x1780, end: 0x17ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "khmerSymbols",
+    name: "Khmer Symbols",
+    description: "Khmer Symbols (0x19E0-0x19FF)",
+    intervals: [{ start: 0x19e0, end: 0x19ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  // Georgian & Armenian
+  {
+    id: "georgian",
+    name: "Georgian",
+    description: "Georgian (0x10A0-0x10FF)",
+    intervals: [{ start: 0x10a0, end: 0x10ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  {
+    id: "georgianExtended",
+    name: "Georgian Extended",
+    description: "Georgian Extended (0x1C90-0x1CBF)",
+    intervals: [{ start: 0x1c90, end: 0x1cbf }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 48,
+  },
+  {
+    id: "georgianSupplement",
+    name: "Georgian Supplement",
+    description: "Georgian Supplement (0x2D00-0x2D2F)",
+    intervals: [{ start: 0x2d00, end: 0x2d2f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 48,
+  },
+  {
+    id: "armenian",
+    name: "Armenian",
+    description: "Armenian (0x0530-0x058F)",
+    intervals: [{ start: 0x0530, end: 0x058f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  // African Scripts
+  {
+    id: "ethiopic",
+    name: "Ethiopic",
+    description: "Amharic, Tigrinya (0x1200-0x137F)",
+    intervals: [{ start: 0x1200, end: 0x137f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 384,
+  },
+  {
+    id: "ethiopicSupplement",
+    name: "Ethiopic Supplement",
+    description: "Ethiopic Supplement (0x1380-0x139F)",
+    intervals: [{ start: 0x1380, end: 0x139f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "ethiopicExtended",
+    name: "Ethiopic Extended",
+    description: "Ethiopic Extended (0x2D80-0x2DDF)",
+    intervals: [{ start: 0x2d80, end: 0x2ddf }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  {
+    id: "nko",
+    name: "N'Ko",
+    description: "N'Ko script for Mandinka, Bambara (0x07C0-0x07FF)",
+    intervals: [{ start: 0x07c0, end: 0x07ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 64,
+  },
+  {
+    id: "vai",
+    name: "Vai",
+    description: "Vai script (0xA500-0xA63F)",
+    intervals: [{ start: 0xa500, end: 0xa63f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 320,
+  },
+  {
+    id: "tifinagh",
+    name: "Tifinagh",
+    description: "Berber languages (0x2D30-0x2D7F)",
+    intervals: [{ start: 0x2d30, end: 0x2d7f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 80,
+  },
+  // Other Scripts
+  {
+    id: "cherokee",
+    name: "Cherokee",
+    description: "Cherokee (0x13A0-0x13FF)",
+    intervals: [{ start: 0x13a0, end: 0x13ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  {
+    id: "cherokeeSupplement",
+    name: "Cherokee Supplement",
+    description: "Cherokee Supplement (0xAB70-0xABBF)",
+    intervals: [{ start: 0xab70, end: 0xabbf }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 80,
+  },
+  {
+    id: "canadianAboriginal",
+    name: "Canadian Aboriginal",
+    description: "Canadian Aboriginal Syllabics (0x1400-0x167F)",
+    intervals: [{ start: 0x1400, end: 0x167f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 640,
+  },
+  {
+    id: "ogham",
+    name: "Ogham",
+    description: "Old Irish (0x1680-0x169F)",
+    intervals: [{ start: 0x1680, end: 0x169f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "runic",
+    name: "Runic",
+    description: "Runic (0x16A0-0x16FF)",
+    intervals: [{ start: 0x16a0, end: 0x16ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  {
+    id: "tagalog",
+    name: "Tagalog",
+    description: "Tagalog (0x1700-0x171F)",
+    intervals: [{ start: 0x1700, end: 0x171f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "hanunoo",
+    name: "Hanunoo",
+    description: "Hanunoo (0x1720-0x173F)",
+    intervals: [{ start: 0x1720, end: 0x173f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "buhid",
+    name: "Buhid",
+    description: "Buhid (0x1740-0x175F)",
+    intervals: [{ start: 0x1740, end: 0x175f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "tagbanwa",
+    name: "Tagbanwa",
+    description: "Tagbanwa (0x1760-0x177F)",
+    intervals: [{ start: 0x1760, end: 0x177f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "mongolian",
+    name: "Mongolian",
+    description: "Mongolian (0x1800-0x18AF)",
+    intervals: [{ start: 0x1800, end: 0x18af }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 176,
+  },
+  {
+    id: "limbu",
+    name: "Limbu",
+    description: "Limbu (0x1900-0x194F)",
+    intervals: [{ start: 0x1900, end: 0x194f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 80,
+  },
+  {
+    id: "taiLe",
+    name: "Tai Le",
+    description: "Tai Le (0x1950-0x197F)",
+    intervals: [{ start: 0x1950, end: 0x197f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 48,
+  },
+  {
+    id: "newTaiLue",
+    name: "New Tai Lue",
+    description: "New Tai Lue (0x1980-0x19DF)",
+    intervals: [{ start: 0x1980, end: 0x19df }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  {
+    id: "buginese",
+    name: "Buginese",
+    description: "Buginese (0x1A00-0x1A1F)",
+    intervals: [{ start: 0x1a00, end: 0x1a1f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "taiTham",
+    name: "Tai Tham",
+    description: "Lanna (0x1A20-0x1AAF)",
+    intervals: [{ start: 0x1a20, end: 0x1aaf }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 144,
+  },
+  {
+    id: "balinese",
+    name: "Balinese",
+    description: "Balinese (0x1B00-0x1B7F)",
+    intervals: [{ start: 0x1b00, end: 0x1b7f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 128,
+  },
+  {
+    id: "sundanese",
+    name: "Sundanese",
+    description: "Sundanese (0x1B80-0x1BBF)",
+    intervals: [{ start: 0x1b80, end: 0x1bbf }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 64,
+  },
+  {
+    id: "batak",
+    name: "Batak",
+    description: "Batak (0x1BC0-0x1BFF)",
+    intervals: [{ start: 0x1bc0, end: 0x1bff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 64,
+  },
+  {
+    id: "lepcha",
+    name: "Lepcha",
+    description: "Lepcha (0x1C00-0x1C4F)",
+    intervals: [{ start: 0x1c00, end: 0x1c4f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 80,
+  },
+  {
+    id: "olChiki",
+    name: "Ol Chiki",
+    description: "Santali (0x1C50-0x1C7F)",
+    intervals: [{ start: 0x1c50, end: 0x1c7f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 48,
+  },
+  {
+    id: "javanese",
+    name: "Javanese",
+    description: "Javanese (0xA980-0xA9DF)",
+    intervals: [{ start: 0xa980, end: 0xa9df }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  {
+    id: "cham",
+    name: "Cham",
+    description: "Cham (0xAA00-0xAA5F)",
+    intervals: [{ start: 0xaa00, end: 0xaa5f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  {
+    id: "taiViet",
+    name: "Tai Viet",
+    description: "Tai Viet (0xAA80-0xAADF)",
+    intervals: [{ start: 0xaa80, end: 0xaadf }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+  {
+    id: "meeteiMayek",
+    name: "Meetei Mayek",
+    description: "Manipuri (0xABC0-0xABFF)",
+    intervals: [{ start: 0xabc0, end: 0xabff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 64,
+  },
+  {
+    id: "syriac",
+    name: "Syriac",
+    description: "Syriac (0x0700-0x074F)",
+    intervals: [{ start: 0x0700, end: 0x074f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 80,
+  },
+  {
+    id: "thaana",
+    name: "Thaana",
+    description: "Dhivehi/Maldivian (0x0780-0x07BF)",
+    intervals: [{ start: 0x0780, end: 0x07bf }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 64,
+  },
+  {
+    id: "samaritan",
+    name: "Samaritan",
+    description: "Samaritan (0x0800-0x083F)",
+    intervals: [{ start: 0x0800, end: 0x083f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 64,
+  },
+  {
+    id: "mandaic",
+    name: "Mandaic",
+    description: "Mandaic (0x0840-0x085F)",
+    intervals: [{ start: 0x0840, end: 0x085f }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 32,
+  },
+  {
+    id: "arabicExtendedA",
+    name: "Arabic Extended-A",
+    description: "Arabic Extended A (0x08A0-0x08FF)",
+    intervals: [{ start: 0x08a0, end: 0x08ff }],
+    category: "World Scripts",
+    defaultEnabled: false,
+    charCount: 96,
+  },
+
   // ===== IPA & Phonetics =====
   {
     id: "ipaExtensions",
     name: "IPA Extensions",
-    description: "국제음성기호 (0x0250-0x02AF)",
+    description: "IPA Extensions (0x0250-0x02AF)",
     intervals: [{ start: 0x0250, end: 0x02af }],
     category: "IPA & Phonetics",
     defaultEnabled: false,
@@ -634,7 +1181,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "phoneticExtensions",
     name: "Phonetic Extensions",
-    description: "음성 확장 (0x1D00-0x1D7F)",
+    description: "Phonetic Extensions (0x1D00-0x1D7F)",
     intervals: [{ start: 0x1d00, end: 0x1d7f }],
     category: "IPA & Phonetics",
     defaultEnabled: false,
@@ -643,7 +1190,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "phoneticExtensionsSupplement",
     name: "Phonetic Extensions Supplement",
-    description: "음성 확장 보충 (0x1D80-0x1DBF)",
+    description: "Phonetic Extensions Supplement (0x1D80-0x1DBF)",
     intervals: [{ start: 0x1d80, end: 0x1dbf }],
     category: "IPA & Phonetics",
     defaultEnabled: false,
@@ -652,7 +1199,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "spacingModifierLetters",
     name: "Spacing Modifier Letters",
-    description: "간격 수정 문자 (0x02B0-0x02FF)",
+    description: "Spacing Modifier Letters (0x02B0-0x02FF)",
     intervals: [{ start: 0x02b0, end: 0x02ff }],
     category: "IPA & Phonetics",
     defaultEnabled: false,
@@ -663,7 +1210,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "mathAlphanumericSymbols",
     name: "Math Alphanumeric Symbols",
-    description: "수학 알파벳 기호 (U+1D400-U+1D7FF)",
+    description: "Mathematical Alphanumeric Symbols (U+1D400-U+1D7FF)",
     intervals: [{ start: 0x1d400, end: 0x1d7ff }],
     category: "Mathematical & Technical",
     defaultEnabled: false,
@@ -672,7 +1219,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "supplementalMathOperators",
     name: "Supplemental Math Operators",
-    description: "수학 연산자 보충 (0x2A00-0x2AFF)",
+    description: "Supplemental Mathematical Operators (0x2A00-0x2AFF)",
     intervals: [{ start: 0x2a00, end: 0x2aff }],
     category: "Mathematical & Technical",
     defaultEnabled: false,
@@ -681,7 +1228,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "miscMathSymbolsA",
     name: "Misc. Math Symbols-A",
-    description: "기타 수학 기호 A (0x27C0-0x27EF)",
+    description: "Misc Mathematical Symbols A (0x27C0-0x27EF)",
     intervals: [{ start: 0x27c0, end: 0x27ef }],
     category: "Mathematical & Technical",
     defaultEnabled: false,
@@ -690,7 +1237,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "miscMathSymbolsB",
     name: "Misc. Math Symbols-B",
-    description: "기타 수학 기호 B (0x2980-0x29FF)",
+    description: "Misc Mathematical Symbols B (0x2980-0x29FF)",
     intervals: [{ start: 0x2980, end: 0x29ff }],
     category: "Mathematical & Technical",
     defaultEnabled: false,
@@ -699,7 +1246,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "supplementalArrows",
     name: "Supplemental Arrows",
-    description: "화살표 보충 A+B+C (0x27F0-0x27FF, 0x2900-0x297F, U+1F800-U+1F8FF)",
+    description: "Supplemental Arrows A+B+C (0x27F0-0x27FF, 0x2900-0x297F, U+1F800-U+1F8FF)",
     intervals: [
       { start: 0x27f0, end: 0x27ff },
       { start: 0x2900, end: 0x297f },
@@ -712,7 +1259,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "opticalCharacterRecognition",
     name: "Optical Character Recognition",
-    description: "광학 문자 인식 (0x2440-0x245F)",
+    description: "Optical Character Recognition (0x2440-0x245F)",
     intervals: [{ start: 0x2440, end: 0x245f }],
     category: "Mathematical & Technical",
     defaultEnabled: false,
@@ -721,7 +1268,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "controlPictures",
     name: "Control Pictures",
-    description: "제어 문자 그림 (0x2400-0x243F)",
+    description: "Control Pictures (0x2400-0x243F)",
     intervals: [{ start: 0x2400, end: 0x243f }],
     category: "Mathematical & Technical",
     defaultEnabled: false,
@@ -732,7 +1279,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "miscSymbolsPictographs",
     name: "Misc. Symbols & Pictographs",
-    description: "기타 기호 및 픽토그램 (U+1F300-U+1F5FF)",
+    description: "Misc Symbols and Pictographs (U+1F300-U+1F5FF)",
     intervals: [{ start: 0x1f300, end: 0x1f5ff }],
     category: "Emoji & Pictographs",
     defaultEnabled: false,
@@ -741,7 +1288,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "emoticons",
     name: "Emoticons",
-    description: "이모티콘 (U+1F600-U+1F64F)",
+    description: "Emoticons (U+1F600-U+1F64F)",
     intervals: [{ start: 0x1f600, end: 0x1f64f }],
     category: "Emoji & Pictographs",
     defaultEnabled: false,
@@ -750,7 +1297,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "transportMapSymbols",
     name: "Transport & Map Symbols",
-    description: "교통 및 지도 기호 (U+1F680-U+1F6FF)",
+    description: "Transport and Map Symbols (U+1F680-U+1F6FF)",
     intervals: [{ start: 0x1f680, end: 0x1f6ff }],
     category: "Emoji & Pictographs",
     defaultEnabled: false,
@@ -759,7 +1306,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "supplementalSymbolsPictographs",
     name: "Supplemental Symbols & Pictographs",
-    description: "보충 기호 및 픽토그램 (U+1F900-U+1F9FF)",
+    description: "Supplemental Symbols and Pictographs (U+1F900-U+1F9FF)",
     intervals: [{ start: 0x1f900, end: 0x1f9ff }],
     category: "Emoji & Pictographs",
     defaultEnabled: false,
@@ -768,7 +1315,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "symbolsExtendedA",
     name: "Symbols & Pictographs Extended-A",
-    description: "기호 및 픽토그램 확장 A (U+1FA00-U+1FA6F)",
+    description: "Symbols and Pictographs Extended A (U+1FA00-U+1FA6F)",
     intervals: [{ start: 0x1fa00, end: 0x1fa6f }],
     category: "Emoji & Pictographs",
     defaultEnabled: false,
@@ -779,7 +1326,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "specials",
     name: "Specials",
-    description: "특수 문자 (0xFFF0-0xFFFF)",
+    description: "Specials (0xFFF0-0xFFFF)",
     intervals: [{ start: 0xfff0, end: 0xffff }],
     category: "Special & Private Use",
     defaultEnabled: false,
@@ -788,7 +1335,7 @@ const UNICODE_RANGES: UnicodeRangeInfo[] = [
   {
     id: "privateUseArea",
     name: "Private Use Area (BMP)",
-    description: "사용자 정의 영역 (0xE000-0xF8FF) - Large!",
+    description: "Private Use Area (0xE000-0xF8FF) - Large!",
     intervals: [{ start: 0xe000, end: 0xf8ff }],
     category: "Special & Private Use",
     defaultEnabled: false,
@@ -819,8 +1366,8 @@ interface QuickPreset {
 const QUICK_PRESETS: QuickPreset[] = [
   {
     id: "korean",
-    name: "한국어",
-    description: "한글 음절, 자모, 호환 자모, CJK 기호, 원문자",
+    name: "Korean",
+    description: "Hangul syllables, Jamo, Compat Jamo, CJK symbols, Enclosed",
     rangeIds: [
       "hangulSyllables",
       "hangulJamo",
@@ -832,8 +1379,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "hanja",
-    name: "한자 (기본)",
-    description: "CJK 통합 한자 (20,992자)",
+    name: "Hanja (Basic)",
+    description: "CJK Unified Ideographs (20,992 chars)",
     rangeIds: [
       "cjkUnified",
       "cjkSymbols",
@@ -843,8 +1390,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "hanjaExtended",
-    name: "한자 (확장)",
-    description: "CJK 한자 + 확장 A~H (약 9만자) - Very Large!",
+    name: "Hanja (Extended)",
+    description: "CJK + Extensions A~H (~90k chars) - Very Large!",
     rangeIds: [
       "cjkUnified",
       "cjkExtensionA",
@@ -865,8 +1412,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "japanese",
-    name: "日本語",
-    description: "히라가나, 가타카나, CJK 기호",
+    name: "Japanese",
+    description: "Hiragana, Katakana, CJK symbols",
     rangeIds: [
       "hiragana",
       "katakana",
@@ -877,9 +1424,21 @@ const QUICK_PRESETS: QuickPreset[] = [
     icon: "🇯🇵",
   },
   {
+    id: "chinese",
+    name: "Chinese",
+    description: "CJK Unified Ideographs, symbols, Pinyin",
+    rangeIds: [
+      "cjkUnified",
+      "cjkSymbols",
+      "cjkCompatIdeographs",
+      "halfwidthFullwidth",
+    ],
+    icon: "🇨🇳",
+  },
+  {
     id: "fullwidth",
-    name: "전각 문자",
-    description: "전각/반각 폼, CJK 기호",
+    name: "Fullwidth",
+    description: "Fullwidth/Halfwidth forms, CJK symbols",
     rangeIds: [
       "halfwidthFullwidth",
       "cjkSymbols",
@@ -889,8 +1448,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "publishing",
-    name: "출판/문서",
-    description: "원문자, 위/아래첨자, 단위기호, 세로쓰기",
+    name: "Publishing",
+    description: "Enclosed, super/subscripts, units, vertical forms",
     rangeIds: [
       "superscriptsSubscripts",
       "enclosedAlphanumerics",
@@ -905,8 +1464,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "math",
-    name: "수학 기호",
-    description: "수학 연산자, 그리스어, 수학 알파벳",
+    name: "Math",
+    description: "Math operators, Greek, Math alphanumeric",
     rangeIds: [
       "greek",
       "greekExtended",
@@ -923,8 +1482,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "symbols",
-    name: "특수 문자",
-    description: "기호, 딩뱃, 도형, 박스 그리기",
+    name: "Symbols",
+    description: "Symbols, dingbats, shapes, box drawing",
     rangeIds: [
       "miscSymbols",
       "dingbats",
@@ -936,8 +1495,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "european",
-    name: "유럽어 확장",
-    description: "라틴 확장, 그리스어, 키릴 확장",
+    name: "European Extended",
+    description: "Latin extended, Greek, Cyrillic extended",
     rangeIds: [
       "latinExtendedB",
       "latinExtendedC",
@@ -955,8 +1514,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "multilingual",
-    name: "다국어",
-    description: "아랍어, 히브리어, 태국어, 베트남어",
+    name: "Multilingual",
+    description: "Arabic, Hebrew, Thai, Vietnamese",
     rangeIds: [
       "arabic",
       "hebrew",
@@ -967,8 +1526,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "phonetics",
-    name: "음성 기호",
-    description: "IPA, 음성 확장, 간격 수정자",
+    name: "Phonetics",
+    description: "IPA, phonetic extensions, spacing modifiers",
     rangeIds: [
       "ipaExtensions",
       "phoneticExtensions",
@@ -979,8 +1538,8 @@ const QUICK_PRESETS: QuickPreset[] = [
   },
   {
     id: "emoji",
-    name: "이모지",
-    description: "이모티콘, 픽토그램, 기호",
+    name: "Emoji",
+    description: "Emoticons, pictographs, symbols",
     rangeIds: [
       "miscSymbolsPictographs",
       "emoticons",
@@ -989,6 +1548,150 @@ const QUICK_PRESETS: QuickPreset[] = [
       "symbolsExtendedA",
     ],
     icon: "😀",
+  },
+  // ===== World Language Presets =====
+  {
+    id: "hindi",
+    name: "Hindi",
+    description: "Devanagari script for Hindi, Sanskrit, Marathi, Nepali",
+    rangeIds: ["devanagari", "devanagariExtended"],
+    icon: "🇮🇳",
+  },
+  {
+    id: "bengali",
+    name: "Bengali",
+    description: "Bengali script for Bengali, Assamese",
+    rangeIds: ["bengali"],
+    icon: "🇧🇩",
+  },
+  {
+    id: "tamil",
+    name: "Tamil",
+    description: "Tamil script",
+    rangeIds: ["tamil"],
+    icon: "தமிழ்",
+  },
+  {
+    id: "telugu",
+    name: "Telugu",
+    description: "Telugu script",
+    rangeIds: ["telugu"],
+    icon: "తెలుగు",
+  },
+  {
+    id: "thai",
+    name: "Thai",
+    description: "Thai script",
+    rangeIds: ["thai"],
+    icon: "🇹🇭",
+  },
+  {
+    id: "vietnamese",
+    name: "Vietnamese",
+    description: "Latin with Vietnamese diacritics",
+    rangeIds: ["latinExtendedAdditional", "combiningDiacriticals"],
+    icon: "🇻🇳",
+  },
+  {
+    id: "arabic",
+    name: "Arabic",
+    description: "Arabic script for Arabic, Persian, Urdu",
+    rangeIds: ["arabic", "arabicSupplement", "arabicExtendedA", "arabicPresentationFormsA", "arabicPresentationFormsB"],
+    icon: "🇸🇦",
+  },
+  {
+    id: "hebrew",
+    name: "Hebrew",
+    description: "Hebrew script",
+    rangeIds: ["hebrew"],
+    icon: "🇮🇱",
+  },
+  {
+    id: "russian",
+    name: "Russian",
+    description: "Cyrillic script for Russian and other Slavic languages",
+    rangeIds: ["cyrillic", "cyrillicSupplement"],
+    icon: "🇷🇺",
+  },
+  {
+    id: "greek",
+    name: "Greek",
+    description: "Greek alphabet",
+    rangeIds: ["greek", "greekExtended"],
+    icon: "🇬🇷",
+  },
+  {
+    id: "georgian",
+    name: "Georgian",
+    description: "Georgian script",
+    rangeIds: ["georgian", "georgianExtended", "georgianSupplement"],
+    icon: "🇬🇪",
+  },
+  {
+    id: "armenian",
+    name: "Armenian",
+    description: "Armenian script",
+    rangeIds: ["armenian"],
+    icon: "🇦🇲",
+  },
+  {
+    id: "ethiopic",
+    name: "Ethiopic",
+    description: "Ethiopic script for Amharic, Tigrinya",
+    rangeIds: ["ethiopic", "ethiopicSupplement", "ethiopicExtended"],
+    icon: "🇪🇹",
+  },
+  {
+    id: "southAsian",
+    name: "South Asian",
+    description: "Major South Asian scripts",
+    rangeIds: [
+      "devanagari",
+      "devanagariExtended",
+      "bengali",
+      "tamil",
+      "telugu",
+      "kannada",
+      "malayalam",
+      "gujarati",
+      "gurmukhi",
+      "oriya",
+      "sinhala",
+    ],
+    icon: "🌏",
+  },
+  {
+    id: "southeastAsian",
+    name: "Southeast Asian",
+    description: "Major Southeast Asian scripts",
+    rangeIds: [
+      "thai",
+      "lao",
+      "myanmar",
+      "myanmarExtendedA",
+      "myanmarExtendedB",
+      "khmer",
+      "khmerSymbols",
+      "javanese",
+      "balinese",
+      "sundanese",
+    ],
+    icon: "🌴",
+  },
+  {
+    id: "middleEastern",
+    name: "Middle Eastern",
+    description: "Arabic, Hebrew, Syriac scripts",
+    rangeIds: [
+      "arabic",
+      "arabicSupplement",
+      "arabicExtendedA",
+      "arabicPresentationFormsA",
+      "arabicPresentationFormsB",
+      "hebrew",
+      "syriac",
+    ],
+    icon: "🕌",
   },
 ];
 
@@ -999,12 +1702,12 @@ const PREVIEW_HEIGHT = 800;
 // Default preview text
 const DEFAULT_PREVIEW_TEXT = `ABCDEFGabcdefg 0123456789
 The quick brown fox jumps over the lazy dog.
-한글 테스트: 가나다라마바사아자차카타파하
-日本語テスト: あいうえお カキクケコ
-中文测试: 你好世界
-수학 기호: ∑∫∂√∞±×÷=≠≈
-특수 문자: ★☆♠♣♥♦►◄●○■□
-화살표: ←→↑↓↔↕⇐⇒⇑⇓`;
+Korean: 가나다라마바사아자차카타파하
+Japanese: あいうえお カキクケコ
+Chinese: 你好世界
+Math: ∑∫∂√∞±×÷=≠≈
+Symbols: ★☆♠♣♥♦►◄●○■□
+Arrows: ←→↑↓↔↕⇐⇒⇑⇓`;
 
 export default function FontConverter() {
   const [fontFile, setFontFile] = useState<File | null>(null);
@@ -1211,11 +1914,8 @@ export default function FontConverter() {
     []
   );
 
-  const handleFileChange = useCallback(
-    async (e: React.ChangeEvent<HTMLInputElement>) => {
-      const file = e.target.files?.[0];
-      if (!file) return;
-
+  const processFile = useCallback(
+    async (file: File) => {
       setFontFile(file);
       setFontInfo(null);
       setFontData(null);
@@ -1238,6 +1938,61 @@ export default function FontConverter() {
       }
     },
     [validateFont]
+  );
+
+  const handleFileChange = useCallback(
+    async (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      await processFile(file);
+    },
+    [processFile]
+  );
+
+  // Drag and drop state
+  const [isDragging, setIsDragging] = useState(false);
+  const dropZoneRef = useRef<HTMLDivElement>(null);
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Only set dragging to false if we're leaving the drop zone entirely
+    if (dropZoneRef.current && !dropZoneRef.current.contains(e.relatedTarget as Node)) {
+      setIsDragging(false);
+    }
+  }, []);
+
+  const handleDrop = useCallback(
+    async (e: React.DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsDragging(false);
+
+      if (!freetypeLoaded) return;
+
+      const file = e.dataTransfer.files?.[0];
+      if (!file) return;
+
+      // Check file extension
+      const ext = file.name.toLowerCase().split(".").pop();
+      if (!["ttf", "otf", "woff", "woff2"].includes(ext || "")) {
+        setConversionState({
+          status: "error",
+          progress: 0,
+          message: "Unsupported file format. Only TTF, OTF, WOFF, WOFF2 files are supported.",
+        });
+        return;
+      }
+
+      await processFile(file);
+    },
+    [freetypeLoaded, processFile]
   );
 
   const handleRangeToggle = useCallback((rangeId: string) => {
@@ -1634,60 +2389,108 @@ export default function FontConverter() {
     conversionState.status !== "converting";
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-      {/* Loading indicator */}
-      {!freetypeLoaded && conversionState.status !== "error" && (
-        <div className="px-4 py-4">
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-            <div className="flex items-center gap-3">
-              <div className="animate-spin h-5 w-5 border-2 border-blue-500 border-t-transparent rounded-full"></div>
-              <span className="text-blue-700 dark:text-blue-300">
-                Loading FreeType WASM library...
-              </span>
+    <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
+      {/* Header */}
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+          <h1 className="text-lg font-semibold text-gray-900 dark:text-white">
+            X4 EPDFont Converter
+          </h1>
+        </div>
+      </header>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+        {/* Loading indicator */}
+        {!freetypeLoaded && conversionState.status !== "error" && (
+          <div className="mb-4">
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+              <div className="flex items-center gap-3">
+                <div className="animate-spin h-5 w-5 border-2 border-blue-500 border-t-transparent rounded-full"></div>
+                <span className="text-blue-700 dark:text-blue-300">
+                  Loading FreeType WASM library...
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Error display */}
-      {conversionState.status === "error" && (
-        <div className="px-4 py-4">
-          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
-            <p className="text-red-700 dark:text-red-300">
-              {conversionState.message}
-            </p>
+        {/* Error display */}
+        {conversionState.status === "error" && (
+          <div className="mb-4">
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+              <p className="text-red-700 dark:text-red-300">
+                {conversionState.message}
+              </p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Main layout: Settings (left) + Preview (right) */}
-      <div className="flex flex-col-reverse lg:flex-row min-h-screen">
-        {/* Sidebar - Settings (Left) */}
-        <aside
-          ref={sidebarRef}
-          className="w-full flex-shrink-0 bg-white dark:bg-gray-800 border-t lg:border-t-0 border-gray-200 dark:border-gray-700 relative"
-          style={{ width: isDesktop ? sidebarWidth : '100%' }}
-        >
-          <div className="p-4 space-y-4 lg:sticky lg:top-0 lg:max-h-screen lg:overflow-y-auto">
-            {/* Font file upload */}
+        {/* Main layout: Settings (left) + Preview (right) */}
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Sidebar - Settings (Left) */}
+          <aside
+            ref={sidebarRef}
+            className="w-full lg:flex-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg"
+          >
+          <div className="p-4 space-y-4">
+            {/* Font file upload with drag and drop */}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Font File
           </label>
-          <input
-            type="file"
-            accept=".ttf,.otf,.woff,.woff2"
-            onChange={handleFileChange}
-            disabled={!freetypeLoaded}
-            className="block w-full text-sm text-gray-500 dark:text-gray-400
-              file:mr-4 file:py-2 file:px-4
-              file:rounded-full file:border-0
-              file:text-sm file:font-semibold
-              file:bg-blue-50 file:text-blue-700
-              dark:file:bg-blue-900 dark:file:text-blue-300
-              hover:file:bg-blue-100 dark:hover:file:bg-blue-800
-              disabled:opacity-50 disabled:cursor-not-allowed"
-          />
+          <div
+            ref={dropZoneRef}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            className={`relative border-2 border-dashed rounded-lg p-4 text-center transition-colors
+              ${isDragging
+                ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20"
+                : "border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500"
+              }
+              ${!freetypeLoaded ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+          >
+            <input
+              type="file"
+              accept=".ttf,.otf,.woff,.woff2"
+              onChange={handleFileChange}
+              disabled={!freetypeLoaded}
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer disabled:cursor-not-allowed"
+            />
+            <div className="space-y-2">
+              <svg
+                className={`mx-auto h-10 w-10 ${isDragging ? "text-blue-500" : "text-gray-400"}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                />
+              </svg>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                {isDragging ? (
+                  <span className="text-blue-600 dark:text-blue-400 font-medium">Drop file here</span>
+                ) : (
+                  <>
+                    <span className="text-blue-600 dark:text-blue-400 font-medium">Choose file</span>
+                    {" or drag and drop"}
+                  </>
+                )}
+              </div>
+              <p className="text-xs text-gray-500 dark:text-gray-500">
+                TTF, OTF, WOFF, WOFF2 (max 10MB)
+              </p>
+              {fontFile && (
+                <p className="text-sm text-gray-700 dark:text-gray-300 font-medium mt-2">
+                  Selected: {fontFile.name}
+                </p>
+              )}
+            </div>
+          </div>
 
           {/* Validating indicator */}
           {isValidating && (
@@ -1790,7 +2593,7 @@ export default function FontConverter() {
               type="text"
               value={fontName}
               onChange={(e) => setFontName(e.target.value)}
-              placeholder="e.g., myfont"
+              placeholder="e.g. myfont"
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md
                 bg-white dark:bg-gray-700 text-gray-900 dark:text-white
                 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -1827,7 +2630,7 @@ export default function FontConverter() {
                 className="w-4 h-4 text-blue-600"
               />
               <span className="text-gray-700 dark:text-gray-300">
-                1-bit (Black & White)
+                1-bit (B&W)
               </span>
             </label>
             <label className="flex items-center gap-2 cursor-pointer">
@@ -1838,7 +2641,7 @@ export default function FontConverter() {
                 className="w-4 h-4 text-blue-600"
               />
               <span className="text-gray-700 dark:text-gray-300">
-                2-bit (4 Grayscale Levels)
+                2-bit (4-level grayscale)
               </span>
             </label>
           </div>
@@ -1976,7 +2779,7 @@ export default function FontConverter() {
                 }}
                 className="text-xs px-2 py-1.5 text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-400 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20"
               >
-                Reset Options
+                Reset
               </button>
             </div>
           </div>
@@ -1985,7 +2788,7 @@ export default function FontConverter() {
         {/* Test Text Input */}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Test Text
+            Preview Text
           </label>
           <textarea
             value={previewText}
@@ -2000,7 +2803,7 @@ export default function FontConverter() {
         {/* Quick Presets (Toggle) */}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-            Quick Presets (토글)
+            Unicode Ranges
           </label>
           <div className="grid grid-cols-2 gap-2">
             {QUICK_PRESETS.map((preset) => {
@@ -2051,7 +2854,7 @@ export default function FontConverter() {
             })}
           </div>
           <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-            프리셋을 클릭하여 켜고 끌 수 있습니다. 여러 프리셋을 동시에 선택할 수 있습니다.
+            Click presets to toggle on/off. Multiple presets can be selected.
           </p>
         </div>
 
@@ -2079,12 +2882,12 @@ export default function FontConverter() {
               </button>
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Unicode Ranges (세부 선택)
+                  Unicode Ranges (Detail Selection)
                 </label>
                 <span className="text-xs text-gray-500 dark:text-gray-400">
-                  {selectedRanges.length} ranges, {totalSelectedChars.toLocaleString()} characters
+                  {selectedRanges.length} ranges, {totalSelectedChars.toLocaleString()} chars
                   {totalSelectedChars > 10000 && (
-                    <span className="ml-1 text-yellow-600 dark:text-yellow-400">(Large)</span>
+                    <span className="ml-1 text-yellow-600 dark:text-yellow-400">(large)</span>
                   )}
                 </span>
               </div>
@@ -2094,7 +2897,7 @@ export default function FontConverter() {
               onClick={(e) => { e.stopPropagation(); setIsUnicodeRangesOpen(!isUnicodeRangesOpen); }}
               className="text-sm px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-200 dark:hover:bg-gray-600"
             >
-              {isUnicodeRangesOpen ? "닫기" : "열기"}
+              {isUnicodeRangesOpen ? "Close" : "Open"}
             </button>
           </div>
 
@@ -2122,7 +2925,7 @@ export default function FontConverter() {
                   onClick={handleResetToDefaults}
                   className="text-xs px-2 py-1 text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-400 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20"
                 >
-                  Reset Defaults
+                  Reset to Defaults
                 </button>
               </div>
 
@@ -2238,7 +3041,7 @@ export default function FontConverter() {
         {/* Custom intervals */}
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Custom Unicode Intervals (Hex)
+            Custom Unicode Ranges (Hex)
           </label>
           <div className="flex gap-2 items-center">
             <input
@@ -2250,7 +3053,7 @@ export default function FontConverter() {
                   start: e.target.value,
                 }))
               }
-              placeholder="Start (e.g., AC00)"
+              placeholder="Start (e.g. AC00)"
               className="w-32 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md
                 bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm"
             />
@@ -2261,7 +3064,7 @@ export default function FontConverter() {
               onChange={(e) =>
                 setCustomInterval((prev) => ({ ...prev, end: e.target.value }))
               }
-              placeholder="End (e.g., D7AF)"
+              placeholder="End (e.g. D7AF)"
               className="w-32 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md
                 bg-white dark:bg-gray-700 text-gray-900 dark:text-white text-sm"
             />
@@ -2314,17 +3117,10 @@ export default function FontConverter() {
 
           </div>
 
-          {/* Resize handle */}
-          <div
-            onMouseDown={handleMouseDown}
-            className={`hidden lg:block absolute top-0 right-0 w-1 h-full cursor-col-resize hover:bg-blue-500 transition-colors
-              ${isResizing ? 'bg-blue-500' : 'bg-gray-300 dark:bg-gray-600'}`}
-          />
-        </aside>
+          </aside>
 
-        {/* Main Content - Preview (Right) */}
-        <main className="flex-1 min-w-0 bg-gray-50 dark:bg-gray-900">
-          <div className="p-4 lg:p-6 space-y-4">
+          {/* Main Content - Preview (Right) */}
+          <div className="w-full lg:w-[520px] lg:flex-shrink-0 space-y-4">
             {/* Preview Section */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
@@ -2451,7 +3247,7 @@ export default function FontConverter() {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="font-medium">Conversion Successful!</span>
+                  <span className="font-medium">Conversion Complete!</span>
                 </div>
                 <div className="grid grid-cols-3 gap-4 text-sm">
                   <div>
@@ -2461,7 +3257,7 @@ export default function FontConverter() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-gray-500 dark:text-gray-400">Intervals</p>
+                    <p className="text-gray-500 dark:text-gray-400">Ranges</p>
                     <p className="font-medium text-gray-900 dark:text-white">
                       {conversionState.result.intervalCount}
                     </p>
@@ -2470,6 +3266,26 @@ export default function FontConverter() {
                     <p className="text-gray-500 dark:text-gray-400">File Size</p>
                     <p className="font-medium text-gray-900 dark:text-white">
                       {formatFileSize(conversionState.result.totalSize || 0)}
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-4 text-sm mt-2">
+                  <div>
+                    <p className="text-gray-500 dark:text-gray-400">Line Height</p>
+                    <p className="font-medium text-gray-900 dark:text-white">
+                      {conversionState.result.advanceY}px
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500 dark:text-gray-400">Ascender</p>
+                    <p className="font-medium text-gray-900 dark:text-white">
+                      {conversionState.result.ascender}px
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500 dark:text-gray-400">Descender</p>
+                    <p className="font-medium text-gray-900 dark:text-white">
+                      {conversionState.result.descender}px
                     </p>
                   </div>
                 </div>
@@ -2486,7 +3302,7 @@ export default function FontConverter() {
             )}
 
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );

@@ -3,23 +3,23 @@ import type { FreeTypeInstance, FreeTypeInit } from "@/types/freetype";
 let freetypeInstance: FreeTypeInstance | null = null;
 let loadingPromise: Promise<FreeTypeInstance> | null = null;
 
-// Dynamic script loader for CDN
-function loadScript(src: string): Promise<void> {
-  return new Promise((resolve, reject) => {
-    // Check if script already loaded
-    if (document.querySelector(`script[src="${src}"]`)) {
-      resolve();
-      return;
-    }
+// // Dynamic script loader for CDN
+// function loadScript(src: string): Promise<void> {
+//   return new Promise((resolve, reject) => {
+//     // Check if script already loaded
+//     if (document.querySelector(`script[src="${src}"]`)) {
+//       resolve();
+//       return;
+//     }
 
-    const script = document.createElement("script");
-    script.type = "module";
-    script.src = src;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
-    document.head.appendChild(script);
-  });
-}
+//     const script = document.createElement("script");
+//     script.type = "module";
+//     script.src = src;
+//     script.onload = () => resolve();
+//     script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+//     document.head.appendChild(script);
+//   });
+// }
 
 export async function loadFreeType(): Promise<FreeTypeInstance> {
   if (freetypeInstance) {
@@ -36,8 +36,8 @@ export async function loadFreeType(): Promise<FreeTypeInstance> {
       const cdnUrl = "https://cdn.jsdelivr.net/npm/freetype-wasm@0/dist/freetype.js";
 
       // Dynamic import from CDN
-      const module = await import(/* webpackIgnore: true */ cdnUrl);
-      const FreeTypeInit = module.default as FreeTypeInit;
+      const freetypeModule = await import(/* webpackIgnore: true */ cdnUrl);
+      const FreeTypeInit = freetypeModule.default as FreeTypeInit;
 
       freetypeInstance = await FreeTypeInit();
 

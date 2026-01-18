@@ -47,24 +47,24 @@ const KOREAN_INTERVALS: UnicodeInterval[] = [
   { start: 0x3130, end: 0x318f },
 ];
 
-// Whitespace and invisible characters to skip
-function isWhitespaceOrInvisible(codePoint: number): boolean {
-  if (codePoint === 0x0020) return true; // Space
+// Invisible characters to skip (but keep space for advanceX)
+function isInvisibleCharacter(codePoint: number): boolean {
+  // Keep space (0x20) - needed for word spacing (advanceX)
+  // Keep no-break space (0x00a0) - needed for spacing
+  // Keep ideographic space (0x3000) - needed for CJK spacing
   if (codePoint === 0x0009) return true; // Tab
   if (codePoint === 0x000a) return true; // Line Feed
   if (codePoint === 0x000b) return true; // Vertical Tab
   if (codePoint === 0x000c) return true; // Form Feed
   if (codePoint === 0x000d) return true; // Carriage Return
-  if (codePoint >= 0x0000 && codePoint <= 0x001f) return true;
-  if (codePoint >= 0x007f && codePoint <= 0x009f) return true;
-  if (codePoint === 0x00a0) return true; // No-Break Space
+  if (codePoint >= 0x0000 && codePoint <= 0x001f) return true; // Control chars (except space)
+  if (codePoint >= 0x007f && codePoint <= 0x009f) return true; // More control chars
   if (codePoint === 0x1680) return true; // Ogham Space Mark
-  if (codePoint >= 0x2000 && codePoint <= 0x200a) return true;
+  if (codePoint >= 0x2000 && codePoint <= 0x200a) return true; // Various spaces (keep for advanceX)
   if (codePoint === 0x2028) return true; // Line Separator
   if (codePoint === 0x2029) return true; // Paragraph Separator
   if (codePoint === 0x202f) return true; // Narrow No-Break Space
   if (codePoint === 0x205f) return true; // Medium Mathematical Space
-  if (codePoint === 0x3000) return true; // Ideographic Space
   if (codePoint === 0x200b) return true; // Zero Width Space
   if (codePoint === 0x200c) return true; // Zero Width Non-Joiner
   if (codePoint === 0x200d) return true; // Zero Width Joiner
@@ -352,7 +352,7 @@ export async function convertTTFToEPDFont(
     const allCodePoints: number[] = [];
     for (const { start, end } of mergedIntervals) {
       for (let cp = start; cp <= end; cp++) {
-        if (!isWhitespaceOrInvisible(cp)) {
+        if (!isInvisibleCharacter(cp)) {
           allCodePoints.push(cp);
         }
       }
@@ -515,10 +515,19 @@ export async function convertTTFToEPDFont(
     onProgress?.(90, "Building binary...");
     await yieldToEventLoop();
 
-    // Get font metrics
-    const advanceY = Math.ceil(activeFont.height / 64) || fontSize;
-    const ascender = Math.ceil(activeFont.ascender / 64) || Math.ceil(fontSize * 0.8);
-    const descender = Math.floor(activeFont.descender / 64) || Math.floor(-fontSize * 0.2);
+    // Get font metrics from scaled size (after SetPixelSize)
+    // FreeType stores metrics in 26.6 fixed-point format (multiply by 64)
+    // Use size.* for scaled metrics, not face.* which are unscaled
+    const sizeMetrics = activeFont.size;
+    const advanceY = sizeMetrics?.height
+      ? Math.ceil(sizeMetrics.height / 64)
+      : fontSize;
+    const ascender = sizeMetrics?.ascender
+      ? Math.ceil(sizeMetrics.ascender / 64)
+      : Math.ceil(fontSize * 0.8);
+    const descender = sizeMetrics?.descender
+      ? Math.floor(sizeMetrics.descender / 64)
+      : Math.floor(-fontSize * 0.2);
 
     // Write binary
     const binaryData = writeEPDFontBinary(
@@ -538,6 +547,9 @@ export async function convertTTFToEPDFont(
       glyphCount: orderedGlyphs.length,
       intervalCount: validatedIntervals.length,
       totalSize: binaryData.length,
+      advanceY,
+      ascender,
+      descender,
     };
   } catch (error) {
     console.error("Conversion error:", error);

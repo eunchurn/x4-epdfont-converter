@@ -52,5 +52,8 @@ export interface ConversionResult {
   glyphCount?: number;
   intervalCount?: number;
   totalSize?: number;
+  advanceY?: number;
+  ascender?: number;
+  descender?: number;
   error?: string;
 }
